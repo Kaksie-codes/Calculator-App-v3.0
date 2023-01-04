@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+    font-family: "Roboto Mono", monospace;
+    color: #000;
+    background: linear-gradient(90deg,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(70, 130, 180, 1) 0%,
+            rgba(238, 238, 238, 1) 50%,
+            rgba(255, 165, 0, 1) 100%);
+}
+
+.calculator-container {
+    display: grid;
+    min-height: 95vh;
+    width: 90vw;
+    max-width: 500px;
+    background-color: #cecece;
+    margin: auto;
+    margin-top: 10px;
+    gap: 1px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 20px minmax(120px, auto) repeat(5, auto);
+    overflow: hidden;
+}
+
+.scientific {
+    grid-template-rows: 20px minmax(120px, auto) repeat(6, auto);
+}
+
+.calculator-container>button {
+    cursor: pointer;
+    font-size: 2rem;
+    outline: none;
+    border: none;
+    background-color: whitesmoke;
+
+}
+
+.function {
+    background-color: rgb(235, 235, 235);
+    background-color: red;
+}
+
+.equals {
+    background-color: rgb(108, 177, 233);
+}
+
+button:hover,
+button:active {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.equals:hover,
+.equals:active {
+    background-color: steelblue;
+    filter: brightness(120%);
+}
+
+.header {
+    grid-column: 1/5;
+    /* padding: 1rem 1.2rem; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.header i {
+    position: absolute;
+    left: 7px;
+}
+
+.display {
+    grid-column: 1/5;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+.display .display-2 {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 1.5rem;
+}
+
+.display .display-1 {
+    color: #fff;
+    font-size: 3.5rem;
+}
+
+.invisible {
+    display: none;
+}
+
+@media screen and (min-width: 768px) {
+    body {
+        font-size: 22px;
+    }
+
+    .calculator_container {
+        grid-template-rows: 70px minmax(120px, auto) repeat(5, minmax(0, auto));
+    }
+}
